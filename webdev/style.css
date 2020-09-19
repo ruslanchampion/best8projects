@@ -1,0 +1,485 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.5s;
+    
+}
+a:hover {
+    border-bottom: 1px white solid;
+    font-weight: 500;
+    transform: scale(1.1);
+}
+.hidden {
+    height: 0px;
+}
+.header {
+    width: 1600px;
+    height: 95px;
+    position: relative; 
+    margin: 0 auto;
+    
+}
+.menu {
+    margin-left: 5px;
+    width: 800px;
+    position: relative; 
+    margin: 0 auto;
+}
+.menu_top{
+    display: flex;
+    justify-content: center;
+    margin-left: 70px;    
+}    
+.menu_top li{
+    margin : 40px 85px 36px 0px;
+    list-style: none;
+    font-size: 14px;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: lighter;
+    height: 17px;
+    transition: transform 0.5s;
+    
+}  
+.menu_top li:hover {
+    transform: scale(1.1);
+} 
+.menu_top li:nth-child(3) {
+    margin-top: 25px;
+    margin-left: 16px;
+    margin-right: 101px;
+
+}
+.menu_top li:nth-child(1) {
+    font-weight: 500;
+    border-bottom: 1px white solid;
+}
+
+.menu_top .logo_planet { 
+    width: 44px;
+    height: 44px;
+}
+.background {
+    width: 1600px;
+    height: 744px;
+    position: relative; 
+    margin: 0 auto;
+    background-image: url(assests/bg-image-wrapper.jpg);
+}
+.main_content {
+    width: 1600px;
+    position: relative; 
+    margin: 0 auto;
+    
+}
+.get_started {
+    height: 649px;
+    width: 750px;
+    position: relative; 
+    margin: 0 auto;   
+    text-align:center;   
+    margin-top: 135px; 
+            
+}
+h1,h2 {
+    color: white;
+}
+h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 64px;
+    letter-spacing: 4.5px;
+    font-style: normal;
+}
+h2{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+}
+.proper {
+    margin-top: 21px;
+    letter-spacing: 0.1px;
+    line-height: 140%;
+}
+.button {
+    position: absolute;
+    color: white;
+    width: 184px;
+    height: 46px;
+    background: #00AFDB;
+    line-height:46px;
+    text-align:center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+}
+.button:hover {
+    border-bottom: 0px white solid;
+    -webkit-box-shadow:  2px 0px 20px 2px rgb(1, 153, 255);
+    -moz-box-shadow:     2px 0px 20px 2px rgb(1, 153, 255);
+    box-shadow:          2px 0px 20px 2px rgb(1, 153, 255);
+    transform: scale(1.1, 1.1);
+}
+.buttonp:hover {
+    border-bottom: 0px white solid;
+    -webkit-box-shadow:  2px 0px 20px 2px rgb(1, 153, 255);
+    -moz-box-shadow:     2px 0px 20px 2px rgb(1, 153, 255);
+    box-shadow:          2px 0px 20px 2px rgb(1, 153, 255);
+    transform: scale(1.1, 1.1);
+    box-shadow: inset -60px 0px 0px 0px #009CC2;
+}
+.button:active {
+    background: #028aac;
+    -webkit-box-shadow:  2px 0px 20px 2px rgb(1, 153, 255);
+    -moz-box-shadow:     2px 0px 20px 2px rgb(1, 153, 255);
+    box-shadow:          2px 0px 20px 2px rgb(1, 153, 255);
+    transform: scale(1);
+}
+.button.getStarted {
+    left: -50%;
+    margin-left: 657px;
+    margin-top: 29px;
+    transition: transform 0.5s;
+    box-sizing: border-box;
+}
+.icons {
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+    height: 20px;
+    position: absolute;
+    top: 203px;
+    left: 144px;
+    
+}
+.icons li {
+    list-style: none;
+    text-decoration: none;
+    transition: transform 0.5s;
+}
+.icons li:hover {
+    transform: scale(1.2, 1.2)
+}
+.rappresent {
+    width: 1600px;
+    height: 442px;
+    background-color: white;
+    position: relative; 
+    margin: 0 auto;
+}
+.present {
+    width: 407px;
+    height: 233px;
+    margin-left: 268px;
+    margin-top: 295px;
+    position: relative;
+}
+.present a {
+    margin-top: 31px;
+}
+.present h3 {
+    margin-top: 23px;
+}
+.text_present {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: #373737;
+    letter-spacing: 1px;
+}
+.text_task {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: #4E4E4E;
+}
+.rappresent::before {
+    position: absolute;
+    content: '';
+    background-image: url(assests/content-image-1.png);
+    width: 407px;
+    height: 582px;
+    background-color: tomato;
+    right: 16.9%;
+    top: -40.1%;
+}
+.community {
+    width: 1600px;
+    height: 504px;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.hacker {
+    width: 298px;
+    height: 175px;
+    position: absolute;
+    right: 64.5%;
+    top: 64.8%;
+}
+.text_community{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    color: #373737;
+    text-align: center;
+}
+.hacker h3 {
+    text-align: center;
+    margin-top: 11px;
+}
+.hacker::before {
+    position: absolute;
+    content: '';
+    width: 45px;
+    height: 45px;
+    background-image: url(assests/Frame\ 6.png);
+    right: 42.5%;
+    top: -37%;
+}
+.navigation_panel {
+    position: absolute;
+    width: 95px;
+    height: 20px;
+    right: 16.1%;
+    top: 36.5%;
+}
+.navigation_panel a{
+    margin-left: 5px;
+    margin-right: 6px;
+}
+.navigation_panel img{
+    transition: transform 0.5s;
+}
+.navigation_panel img:hover{
+    transform: scale( 1.4);
+}
+.slider_imgs {
+    display: flex;
+    position: absolute;
+    width: 894px;
+    height: 244px;
+    right: 0%;
+    top: 44.4%;
+}
+.slider_imgs img {
+    margin-right: 30px;
+    margin-left: 0;
+}
+.navigation_panel span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+}
+.implement {
+    position: relative;
+    width: 1600px;
+    height: 525px;
+    margin: 0 auto;
+}
+.implement .present {
+    margin-left: 815px;
+    margin-top: 423px;
+}
+.implement .present .button{
+    width: 180px;
+}
+.implement::after {
+    position: absolute;
+    content: '';
+    width: 407px;
+    height: 582px;
+    background-image: url(assests/content-image-2.png);
+    right: 57.8%;
+    top: -37.5%;
+}
+.sign {
+    position: relative;
+    width: 1600px;
+    height: 596px;
+    margin: 0 auto;
+    background-image: url(assests/pexels-christina-morillo-1181675\ 1.png);
+    background-color: rgb(0%, 0%, 0%, 0.6);
+    z-index: 1;
+}
+.sign::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: rgb(0%, 0%, 0%, 0.6);
+    z-index: inherit;
+    
+   }
+.sign h2 {
+    color: white;
+    z-index: 4;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.email {
+    position: absolute;
+    width: 406px;
+    height: 104px;
+    top: 36%;
+    left: 37.3%;
+    z-index: 3;
+}
+#mail {
+    width:337px;
+    height:44px;
+}
+input::placeholder {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    color: #373737;
+    padding: 20.5px;
+}
+.submit {
+    position: absolute;
+    width: 66px;
+    height: 47px;
+    left: 339px;
+    top: 58px;
+    border: none;
+    background: url(assests/icons/fa-check.svg) #00AFDB no-repeat center;
+    transition: transform 0.5s;
+}
+.submit:hover {
+    transform: rotate3d(0, 1, 0, 360deg) scale(1.1);
+}
+.download {
+    position: relative;
+    width: 1600px;
+    height: 560px;
+    margin: -11% auto;
+}
+.downloading {
+    width: 507px;
+    height: 233px;
+    margin-left: 34.2%;
+    margin-top: 20.5%;
+    position: relative;
+    text-align: center;
+}
+.downloading h3 {
+    margin-top: 4.5%;
+}
+.buttonp {
+    display: inline-block;
+    position: relative;
+    width: 188px;
+    height: 50px;
+    background: #00AFDB no-repeat right;
+    margin: 3%;
+    text-align: center;
+    margin-top: 5.7%;
+    margin-left: 2.6%;
+    box-shadow: inset -60px 0px 0px 0px #009CC2;
+}
+.buttonp p {
+    text-transform: uppercase;
+    margin: 0;
+    position: absolute;
+    top: 54%;
+    left: 33%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+.android::after {
+    position: absolute;
+    content: '';
+    width: 25px;
+    height: 23px;
+    background-image: url(assests/icons/icon-android.svg);
+    right: 11.5%;
+    top: 27%; 
+}
+.apple::after {
+    position: absolute;
+    content: '';
+    width: 17px;
+    height: 20px;
+    background-image: url(assests/icons/icon-apple.svg);
+    right: 10.5%;
+    top: 30%;
+
+}
+.apple p {
+    top: 54%;
+    left: 34.5%;
+}
+.fotter {
+    position: relative;
+    width: 1600px;
+    height: 184px;
+    margin: 0 auto;
+    background-color: black;
+}
+.fotter ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.footer_block {
+    position: absolute;
+    width: 235px;
+    height: 16px;
+    top: 39%;
+    left: 10%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    color: #FFFFFF;
+    opacity: 0.98;
+}
+.logo_bot {
+    position: absolute;
+    top: 32.6%;
+    left: 48.6%;
+}
+.by {
+    position: absolute;
+    top: 40%;
+    left: 79.4%;
+}
+.by p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    color: #818181;
+}
