@@ -34,7 +34,8 @@ a:hover {
 .menu_top{
     display: flex;
     justify-content: center;
-    margin-left: 70px;    
+    margin-left: 70px;  
+    opacity: 0.9;  
 }    
 .menu_top li{
     margin : 40px 85px 36px 0px;
@@ -154,8 +155,8 @@ h2{
     width: 170px;
     height: 20px;
     position: absolute;
-    top: 203px;
-    left: 144px;
+    top: 202.5px;
+    left: 145px;
     
 }
 .icons li {
@@ -255,7 +256,7 @@ h2{
 }
 .navigation_panel {
     position: absolute;
-    width: 95px;
+    width: 97px;
     height: 20px;
     right: 16.1%;
     top: 36.5%;
@@ -308,8 +309,8 @@ h2{
     width: 407px;
     height: 582px;
     background-image: url(assests/content-image-2.png);
-    right: 57.8%;
-    top: -37.5%;
+    right: 57.7%;
+    top: -37.8%;
 }
 .sign {
     position: relative;
@@ -356,7 +357,7 @@ input::placeholder {
     font-size: 14px;
     line-height: 140%;
     color: #373737;
-    padding: 20.5px;
+    padding: 23px;
 }
 .submit {
     position: absolute;
@@ -396,7 +397,7 @@ input::placeholder {
     background: #00AFDB no-repeat right;
     margin: 3%;
     text-align: center;
-    margin-top: 5.7%;
+    margin-top: 6%;
     margin-left: 2.6%;
     box-shadow: inset -60px 0px 0px 0px #009CC2;
 }
@@ -449,12 +450,25 @@ input::placeholder {
     justify-content: space-between;
     list-style: none;
 }
-
+.fotter ul:first-child::after{
+    position: absolute;
+    content: '|';
+    opacity: 0.4;
+    left: 64px;
+    font-size: 8px;
+}
+.fotter ul li:nth-child(2)::after{
+    position: absolute;
+    content: '|';
+    opacity: 0.4;
+    left: 150px;
+    font-size: 8px;
+}
 .footer_block {
     position: absolute;
     width: 235px;
     height: 16px;
-    top: 39%;
+    top: 40%;
     left: 10%;
     font-family: Roboto;
     font-style: normal;
