@@ -91,12 +91,13 @@ a:hover {
 h1,h2 {
     color: white;
 }
-h1 {
+.head-title {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 64px;
     letter-spacing: 4.5px;
     font-style: normal;
+    color: white;
 }
 h2{
     font-style: normal;
