@@ -350,14 +350,8 @@ h2{
     width:337px;
     height:44px;
 }
-input::placeholder {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 140%;
-    color: #373737;
-    padding: 23px;
+input {
+    padding-left: 23px;
 }
 .submit {
     position: absolute;
