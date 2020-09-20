@@ -315,7 +315,7 @@ h2{
 .sign {
     position: relative;
     width: 1600px;
-    height: 596px;
+    height: 522px;
     margin: 0 auto;
     background-image: url(assests/pexels-christina-morillo-1181675\ 1.png);
     background-color: rgb(0%, 0%, 0%, 0.6);
@@ -342,7 +342,7 @@ h2{
     position: absolute;
     width: 406px;
     height: 104px;
-    top: 36%;
+    top: 38%;
     left: 37.3%;
     z-index: 3;
 }
@@ -375,7 +375,7 @@ input::placeholder {
 .download {
     position: relative;
     width: 1600px;
-    height: 560px;
+    height: 558px;
     margin: -11% auto;
 }
 .downloading {
@@ -392,8 +392,8 @@ input::placeholder {
 .buttonp {
     display: inline-block;
     position: relative;
-    width: 188px;
-    height: 50px;
+    width: 185px;
+    height: 47px;
     background: #00AFDB no-repeat right;
     margin: 3%;
     text-align: center;
@@ -441,7 +441,7 @@ input::placeholder {
 .fotter {
     position: relative;
     width: 1600px;
-    height: 184px;
+    height: 181px;
     margin: 0 auto;
     background-color: black;
 }
