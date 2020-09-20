@@ -85,7 +85,7 @@ a:hover {
     position: relative; 
     margin: 0 auto;   
     text-align:center;   
-    margin-top: 135px; 
+    margin-top: 134px; 
             
 }
 h1,h2 {
@@ -370,14 +370,14 @@ input {
 .download {
     position: relative;
     width: 1600px;
-    height: 558px;
-    margin: -11% auto;
+    margin: 0 auto;
 }
 .downloading {
     width: 507px;
     height: 233px;
     margin-left: 34.2%;
-    margin-top: 20.5%;
+    margin-top: 7.5%;
+    margin-bottom: 7%;
     position: relative;
     text-align: center;
 }
@@ -469,7 +469,7 @@ input {
     font-style: normal;
     font-weight: 300;
     font-size: 14px;
-    line-height: 140%;
+    line-height: 160%;
     color: #FFFFFF;
     opacity: 0.98;
 }
