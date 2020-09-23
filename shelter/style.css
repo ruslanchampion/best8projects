@@ -61,6 +61,7 @@ ul {
     margin-left: 2.24rem;
 }
 .main-block {
+    position: relative;
     display: block;
     width: 500px;
     margin-top: 19%;
@@ -94,4 +95,28 @@ ul {
     line-height: 1.5rem;
     letter-spacing: 0.017rem;
     color: #CDCDCD;
+}
+.main-block::after {
+    position: absolute;
+    content: "";
+    background: url(assets/start-screen-puppy.png) no-repeat;
+    background-size: 100% 100%;
+    width: 698px;
+    height: 728px;
+    left: 100%;
+    bottom: -83%;
+    box-sizing: content-box;
+}
+.about {
+    width: 62.5%;
+    margin: 0 auto;
+}
+.about-shelter {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: right;
+    width: 50%;
+}
+.about-shelter .headlines {
+    color: #545454;
 }
