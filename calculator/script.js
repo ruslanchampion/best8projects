@@ -2,6 +2,7 @@ class Calculator {
 	constructor(previousOperandTextElement, currentOperandTextElement) {
 		this.previousOperandTextElement = previousOperandTextElement
 		this.currentOperandTextElement = currentOperandTextElement
+		this.readyToReset = false
 		this.clear()
 	}
 
@@ -58,7 +59,9 @@ class Calculator {
 		let arr = computation.toString().split('')
 		if (arr[10] === arr[11] && arr[11] === arr[12] && arr[10] !== undefined) {
 			this.currentOperand = computation.toFixed(2)
+			this.readyToReset = true;
 		} else {
+			this.readyToReset = true;
 			this.currentOperand = computation;
 			this.operation = undefined
 			this.previousOperand = ''
@@ -124,10 +127,17 @@ const lnButtons = document.querySelector('[data-ln]')
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
 numberButtons.forEach(button => {
-	button.addEventListener('click', () => {
-		calculator.appendNumber(button.innerText)
-		calculator.updateDisplay()
-	})
+    button.addEventListener("click", () => {
+
+        if(calculator.previousOperand === "" &&
+        calculator.currentOperand !== "" &&
+    calculator.readyToReset) {
+            calculator.currentOperand = "";
+            calculator.readyToReset = false;
+        }
+        calculator.appendNumber(button.innerText)
+        calculator.updateDisplay();
+    })
 })
 
 operationButtons.forEach(button => {
