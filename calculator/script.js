@@ -16,6 +16,10 @@ class Calculator {
 		this.currentOperand = this.currentOperand.toString().slice(0, -1)
 	}
 
+	minusPlus() {
+		this.currentOperand = this.currentOperand * -1
+	}
+
 	appendNumber(number) {
 		if (number === '.' && this.currentOperand.includes('.')) return
 		this.currentOperand = this.currentOperand.toString() + number.toString()
@@ -124,6 +128,7 @@ const previousOperandTextElement = document.querySelector('[data-previous-operan
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
 const sqrtButtons = document.querySelector('[data-sqrt]')
 const lnButtons = document.querySelector('[data-ln]')
+const minusPlus = document.querySelector('[data-minus-plus]')
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
 numberButtons.forEach(button => {
@@ -168,5 +173,9 @@ sqrtButtons.addEventListener('click', button => {
 
 lnButtons.addEventListener('click', button => {
 	calculator.ln()
+	calculator.updateDisplay()
+})
+minusPlus.addEventListener('click', button => {
+	calculator.minusPlus()
 	calculator.updateDisplay()
 })
