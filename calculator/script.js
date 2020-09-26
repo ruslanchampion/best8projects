@@ -61,10 +61,19 @@ class Calculator {
 				return
 		}
 		let arr = computation.toString().split('')
-		if (arr[10] === arr[11] && arr[11] === arr[12] && arr[10] !== undefined) {
+		 if (computation == 0.020000000000000004 || computation == -0.020000000000000004) {
 			this.currentOperand = computation.toFixed(2)
 			this.readyToReset = true;
-		} else {
+			this.operation = undefined
+			this.previousOperand = ''
+			}
+		else if (arr[10] === arr[11] && arr[11] === arr[12] && arr[10] !== undefined) {
+				this.currentOperand = computation.toFixed(1)
+				this.readyToReset = true;
+				this.operation = undefined
+				this.previousOperand = ''
+			}
+		 else {
 			this.readyToReset = true;
 			this.currentOperand = computation;
 			this.operation = undefined
@@ -75,8 +84,19 @@ class Calculator {
 	sqrt() {
 		const current = parseFloat(this.currentOperand)
 		const prev = parseFloat(this.previousOperand)
-		if (isNaN(prev)) {
+		if (isNaN(prev) && this.currentOperand > 0) {
 			this.currentOperand = Math.sqrt(current)
+			this.readyToReset = true;
+			this.operation = undefined
+			this.previousOperand = ''
+		}
+		else if (this.currentOperand < 0) {
+			const display = document.querySelector('.hints')
+			display.textContent = 'Error: Корень из отрицательного числа не возможен'
+			 function say() {
+				display.textContent = 'Для выбора отрицательного числа: нужно набрать число и нажать на "+/-" '
+			}
+			let timerId = setTimeout(say, 5000);
 		}
 	}
 
@@ -85,6 +105,9 @@ class Calculator {
 		const prev = parseFloat(this.previousOperand)
 		if (isNaN(prev)) {
 			this.currentOperand = Math.log(current)
+			this.readyToReset = true;
+			this.operation = undefined
+			this.previousOperand = ''
 
 		}
 	}
