@@ -238,3 +238,18 @@ ul {
     max-width: 16rem;
     margin-left: 8px;
 }
+.helps {
+    width: 62.5%;
+    margin: 4.2% auto;
+    text-align: center;
+}
+.cards-help {
+    display: flex;
+    margin-top: 5%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card-help {
+    margin: 0 5%;
+    margin-bottom: 3.9%;
+}
