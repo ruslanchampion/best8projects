@@ -3,9 +3,10 @@
     font-weight: 100;
 }
 .start-screen {
-    background-image: url(assets/start-screen-background.jpg);
-    width: 100vw;
+    background: url(assets/start-screen-background.jpg) 100% no-repeat;
+    width: 100%;
     overflow: hidden;
+    background-size: cover;
 }
 a { 
     text-decoration: none;
@@ -20,19 +21,20 @@ ul {
 .main-wraper {
     width: 62.5%;
     margin: 0 auto;
+    max-width: 1200px;
 }
 .header {
-    margin-top: 3.8rem;
+    margin-top: 3.7rem;
 }
 .main-menu  {
     display: flex;
-    justify-content: flex-end;
+    margin-left: 7px;
 }
 .main-menu li:first-child  {
     margin-right: auto;
 }
 .head-text {
-    font-family: Georgia;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 32px;
     line-height: 36px;
     letter-spacing: 0.06em;
@@ -57,15 +59,19 @@ ul {
 .main-menu p {
     font-size: 13px;
 }
+.main-menu li {
+    margin-left: -1px;
+}
 .button-menu {
     margin-left: 2.24rem;
 }
 .main-block {
+    margin: 0 auto;
     position: relative;
     display: block;
-    width: 500px;
-    margin-top: 19%;
-    margin-bottom: 16rem;
+    width: 99%;
+    margin-top: 17.7%;
+    margin-bottom: 15.5rem;
 }
 .headlines {
     font-family: Georgia;
@@ -76,20 +82,20 @@ ul {
 }
 .button-wraper {
     display: block;
-    max-width: 200px;
+    max-width: 13rem;
     height: 52px;
     background-color: #F1CDB3;
     color: #292929;
     border-radius: 50px;
-    line-height: 50px;
+    line-height: 53px;
     text-align: center;
     letter-spacing: 0.03em;
     font-size: 1.2rem;
-    font-weight: 500;
 }
 .p1-text {
-    margin-top: 30px;
-    margin-bottom: 40px;
+    width: 39%;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     font-family: Arial;
     font-size: 0.9rem;
     line-height: 1.5rem;
@@ -103,20 +109,132 @@ ul {
     background-size: 100% 100%;
     width: 698px;
     height: 728px;
-    left: 100%;
-    bottom: -83%;
-    box-sizing: content-box;
+    left: 42%;
+    bottom: -78%;
 }
 .about {
+    display: flex;
     width: 62.5%;
     margin: 0 auto;
+    justify-content: flex-end;
+    margin-bottom: 4.5%;
 }
 .about-shelter {
-    margin-top: 10%;
-    margin-bottom: 10%;
-    text-align: right;
-    width: 50%;
+        margin-top: 7.8%;
+        margin-right: 14%;
+        text-align: left;
+        width: 36%;
 }
 .about-shelter .headlines {
     color: #545454;
+}
+.p2-text {
+    font-family: Arial;
+    font-size: 15px;
+    line-height: 160%;
+    color: #4C4C4C;
+    margin: 5.8% 0;
+}
+.headlines-house {
+    margin: 0;
+    font-family: Georgia;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #545454;
+    position: relative;
+}
+.about-shelter .headlines-house::before {
+    position: absolute;
+    content: "";
+    background: url(assets/about-pets.png) no-repeat;
+    width: 300px;
+    height: 408px;
+    left: -97%;
+    top: -17%;
+}
+.section-help {
+    background: #F6F6F6;
+    overflow: hidden;
+}
+.friends {
+    display: flex;
+    width: 62.5%;
+    margin: 4.3% auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5.1%;
+}
+.block-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 435px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.ponter-left {
+    border: 2px solid  #F1CDB3;
+    border-radius: 50%;
+    background: url(assets/icons/Arrow.svg) no-repeat;
+    background-position: center;
+    width: 52px;
+    height: 52px;
+}
+.ponter-right {
+    border: 2px solid  #F1CDB3;
+    border-radius: 50%;
+    background: url(assets/icons/Arrow.svg) no-repeat;
+    background-position: center;
+    width: 52px;
+    height: 52px;
+    transform: rotate(180deg);
+}
+.cards {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 7px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 270px;
+    height: 435px;
+    background-color:#FAFAFA;
+    border-radius: 5%;
+}
+.friends .headlines-house {
+    margin-left: 0.9rem;
+}
+.pets-title {
+    font-family: Georgia;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+.button-learn {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 2px solid #F1CDB3;
+    height: 52px;
+    width: 183px;
+    border-radius: 50px;
+    text-align: center;
+    color: #292929;
+    line-height: 271%;
+    letter-spacing: 0.03em;
+    font-size: 17px;
+}
+.friends .button-wraper {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 16rem;
+    margin-left: 8px;
 }
