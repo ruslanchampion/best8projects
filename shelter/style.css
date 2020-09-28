@@ -328,3 +328,74 @@ ul {
     right: 106%;
     box-sizing: border-box;
 }
+.footer {
+    background: url(assets/footer-gradient-background.png) 100% no-repeat;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+}
+.footer-wrapper {
+    display: flex;
+    width: 62.5%;
+    margin: 5% auto;
+    position: relative;
+}
+.footer-wrapper .headlines-house {
+    color: #FFFFFF;
+}
+.sugestions {
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+}
+.adreses {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    position: relative;
+}
+.footer-text {
+    font-family: Georgia;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    margin: 5%;
+}
+.contact-link {
+    margin: 5%;
+    position: relative;
+}
+.footer-wrapper::after {
+    content: "";
+    position: absolute;  
+    width: 300px;
+    height: 315px;
+    background: url(assets/footer-puppy.png);
+    left: 100%;
+}
+.mail .footer-text::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 32px;
+    background: url(assets/icons/icon-email.svg);
+    right: 100%;
+}
+.tel .footer-text::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 32px;
+    background: url(assets/icons/icon-phone.svg);
+    right: 100%;
+}
+.map-icon .footer-text::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 32px;
+    background: url(assets/icons/icon-marker.svg);
+    right: 100%;
+}
