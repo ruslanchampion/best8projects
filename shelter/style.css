@@ -1,3 +1,6 @@
+body {
+    scroll-behavior: smooth;
+}
 * {
     font-style: normal;
     font-weight: 100;
