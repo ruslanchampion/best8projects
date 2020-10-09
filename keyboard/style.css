@@ -1,0 +1,121 @@
+.screen {
+  display: block;
+  width: 80vw;
+  height: 40vh;
+  background-color: rgba(54, 35, 35, 0.233);
+  position: sticky;
+  margin: 0 auto;
+}
+.keyboard {
+  display: block;
+  width: 80vw;
+  height: 40vh;
+  position: sticky;
+  margin: 50px auto;
+  
+}
+.pool {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  min-height: 40vh;
+  grid-gap: 0.5% 0.5%;
+  box-sizing: border-box;
+  }
+.poolnone {
+    display: none;
+  }
+  
+.el {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #C4A0FD;
+  background-color: #d3deff;
+  color: #C4A0FD;
+  font-size: 2em;
+  overflow: auto;
+  box-shadow: 7px 7px 9px 0px rgba(50, 50, 50, 0.74);
+  font-family: 'Hanalei', cursive;
+  }
+.capitalize {
+  text-transform: uppercase
+}
+  .el.enter {
+    grid-column: 13/15 ;
+    background-color: d3deff;
+  }
+
+  .el.shiftl {
+    grid-column: 1/3 ;
+  }
+  .el.shiftr {
+    grid-column: 13/15 ;
+  }
+  .el.ContextMenu {   
+    background: url(icons/menu.svg) no-repeat #d3deff; 
+    background-size: 1.3em auto; 
+    background-position: center;
+    
+  }
+  .el.space{
+    grid-column: 4/8 ;
+  }
+  .el.Backspace {  
+    background: url(icons/backspace.svg) no-repeat #d3deff; 
+    background-size: 1.1em; 
+    background-position: center; 
+  }
+  .el.enter { 
+    background: url(icons/enter.svg) no-repeat #d3deff; 
+    background-size: 1.1em; 
+    background-position: center; 
+  }
+  .el.ArrowLeft {   
+    background: url(icons/left.svg) no-repeat #d3deff; 
+    background-size: 1.1em; 
+    background-position: center; 
+  }
+  .el.ArrowDown {
+    background: url(icons/down.svg) no-repeat #d3deff; 
+    background-size: 1.1em; 
+    background-position: center; 
+  }
+
+  .el.ArrowUp {
+    background: url(icons/up.svg) no-repeat #d3deff; 
+    background-size: 1.1em; 
+    background-position: center; 
+  }
+
+  .el.ArrowRight {
+    background: url(icons/right.svg) no-repeat #d3deff; 
+    background-size: 1.1em; 
+    background-position: center; 
+  }
+  .el.Tab {
+    background: url(icons/tab.svg) no-repeat #d3deff; 
+    background-size: 1.1em; 
+    background-position: center; 
+  }
+  .el.CapsLock {
+    background: url(icons/caps.svg) no-repeat #d3deff; 
+    background-size: 1.1em; 
+    background-position: center; 
+  }
+  .el.shiftl, .shiftr {
+    background: url(icons/shift.svg) no-repeat #d3deff; 
+    background-size: 1.1em; 
+    background-position: center; 
+  }
+  .el.Control, .Controlr {
+    background: url(icons/ctrl.svg) no-repeat #d3deff; 
+    background-size: 1.1em; 
+    background-position: center; 
+  }
+  .el.OS {
+    background: url(icons/os.svg) no-repeat #d3deff; 
+    background-size: 1.1em; 
+    background-position: center; 
+  }
+  
