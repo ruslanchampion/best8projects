@@ -1,0 +1,422 @@
+body {
+    scroll-behavior: smooth;
+}
+* {
+    font-style: normal;
+    font-weight: 100;
+}
+.start-screen {
+    background: url(assets/start-screen-background.jpg) 100% no-repeat;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+}
+a { 
+    text-decoration: none;
+}
+li {
+    list-style-type: none;
+}
+ul {
+    margin-left: 0;
+    padding-left: 0;
+} 
+.main-wraper {
+    width: 62.5%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.header {
+    margin-top: 3.7rem;
+}
+.main-menu  {
+    display: flex;
+    margin-left: 7px;
+}
+.main-menu li:first-child  {
+    margin-right: auto;
+}
+.head-text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    margin: 0;
+    font-weight: 100;
+}
+.menu-text {
+    font-family: Arial;
+    font-size: 15px;
+    line-height: 58px;
+    font-weight: 300;
+    color: #CDCDCD;
+}
+.ph-text {
+    font-family: Arial;
+    font-size: 13px;
+    line-height: 10px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+}
+.main-menu p {
+    font-size: 13px;
+}
+.main-menu li {
+    margin-left: -1px;
+}
+.button-menu {
+    margin-left: 2.24rem;
+}
+.main-block {
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    width: 99%;
+    margin-top: 17.7%;
+    margin-bottom: 15.5rem;
+}
+.headlines {
+    font-family: Georgia;
+    font-size: 44px;
+    line-height: 130%;
+    color: #FFFFFF;
+    margin: 0;
+}
+.button-wraper {
+    display: block;
+    max-width: 13rem;
+    height: 52px;
+    background-color: #F1CDB3;
+    color: #292929;
+    border-radius: 50px;
+    line-height: 53px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    font-size: 1.2rem;
+}
+.p1-text {
+    width: 39%;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    font-family: Arial;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.017rem;
+    color: #CDCDCD;
+}
+.main-block::after {
+    position: absolute;
+    content: "";
+    background: url(assets/start-screen-puppy.png) no-repeat;
+    background-size: 100% 100%;
+    width: 698px;
+    height: 728px;
+    left: 42%;
+    bottom: -78%;
+}
+.about {
+    display: flex;
+    width: 62.5%;
+    margin: 0 auto;
+    justify-content: flex-end;
+    margin-bottom: 4.5%;
+}
+.about-shelter {
+        margin-top: 7.8%;
+        margin-right: 14%;
+        text-align: left;
+        width: 36%;
+}
+.about-shelter .headlines {
+    color: #545454;
+}
+.p2-text {
+    font-family: Arial;
+    font-size: 15px;
+    line-height: 160%;
+    color: #4C4C4C;
+    margin: 5.8% 0;
+}
+.headlines-house {
+    margin: 0;
+    font-family: Georgia;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #545454;
+    position: relative;
+}
+.about-shelter .headlines-house::before {
+    position: absolute;
+    content: "";
+    background: url(assets/about-pets.png) no-repeat;
+    width: 300px;
+    height: 408px;
+    left: -97%;
+    top: -17%;
+}
+.section-help {
+    background: #F6F6F6;
+    overflow: hidden;
+}
+.friends {
+    display: flex;
+    width: 62.5%;
+    margin: 4.3% auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5.1%;
+}
+.block-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 435px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.ponter-left {
+    border: 2px solid  #F1CDB3;
+    border-radius: 50%;
+    background: url(assets/icons/Arrow.svg) no-repeat;
+    background-position: center;
+    width: 52px;
+    height: 52px;
+}
+.ponter-right {
+    border: 2px solid  #F1CDB3;
+    border-radius: 50%;
+    background: url(assets/icons/Arrow.svg) no-repeat;
+    background-position: center;
+    width: 52px;
+    height: 52px;
+    transform: rotate(180deg);
+}
+.cards {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 7px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 270px;
+    height: 435px;
+    background-color:#FAFAFA;
+    border-radius: 5%;
+}
+.friends .headlines-house {
+    margin-left: 0.9rem;
+}
+.pets-title {
+    font-family: Georgia;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
+.button-learn {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 2px solid #F1CDB3;
+    height: 52px;
+    width: 183px;
+    border-radius: 50px;
+    text-align: center;
+    color: #292929;
+    line-height: 271%;
+    letter-spacing: 0.03em;
+    font-size: 17px;
+}
+.friends .button-wraper {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 16rem;
+    margin-left: 8px;
+}
+.helps {
+    width: 62.5%;
+    margin: 4.2% auto;
+    text-align: center;
+    margin-bottom: 1.8%;
+}
+.cards-help {
+    display: flex;
+    margin-top: 5%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card-help {
+    margin: 0 5%;
+    margin-bottom: 3.9%;
+}
+.donation {
+    background: #F6F6F6;
+}
+.donation-wrapper {
+    width: 62.5%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+.donation-block {
+    width: 30%;
+    margin-top: 6.7%;
+    margin-right: 13.2%;
+    margin-bottom: 8.5%;
+    position: relative;
+}
+.donation-block::before {
+    content: "";
+    position: absolute;
+    background: url(assets/donation-dog.png) no-repeat;
+    background-size: cover;
+    width: 505px;
+    height: 261px;
+    right: 108%;
+    top: 4%;
+}
+.title-bank {
+    display: block;
+    font-family: Georgia;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #545454;
+    margin: 6% 0;
+}
+.legal {
+    font-family: Arial;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    color: #B2B2B2;
+}
+.button-donation {
+    display: flex;
+    justify-content: flex-end;
+    justify-items: center;
+    align-items: center;
+    min-width: 22rem;
+    height: 38px;
+    background-color: #F1CDB3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    box-sizing: border-box;
+}
+.number-donations {
+    display: block;
+    font-family: Georgia;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #545454;
+    position: relative;
+    margin-right: 5%;
+    box-sizing: border-box;
+}
+.number-donations::before {
+    content: "";
+    position: absolute;
+    background: url(assets/icons/credit-card.svg) no-repeat;
+    width: 30px;
+    height: 23px;
+    right: 106%;
+    box-sizing: border-box;
+}
+.footer {
+    background: url(assets/footer-gradient-background.png) 100% no-repeat;
+    width: 100%;
+    overflow: hidden;
+    background-size: cover;
+}
+.footer-wrapper {
+    display: flex;
+    width: 62.5%;
+    margin: 3.2% auto;
+    position: relative;
+}
+.footer-wrapper .headlines-house {
+    color: #FFFFFF;
+    margin-bottom: 5%;
+}
+.sugestions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24%;
+    margin-right: 13%;
+}
+.adreses {
+    display: flex;
+    flex-direction: column;
+    width: 26%;
+    position: relative;
+}
+.footer-text {
+    font-family: Georgia;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    margin: 5%;
+}
+.contact-link {
+    margin: 5%;
+    position: relative;
+    margin-left: 18%;
+}
+.footer-wrapper::after {
+    content: "";
+    position: absolute;  
+    width: 300px;
+    height: 315px;
+    background: url(assets/footer-puppy.png);
+    left: 75.3%;
+    top: -9%;
+
+}
+.mail .footer-text::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 32px;
+    background: url(assets/icons/icon-email.svg);
+    top: 1%;
+    right: 103%;
+}
+.tel .footer-text::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 32px;
+    background: url(assets/icons/icon-phone.svg);
+    right: 103%;
+    top: 1%;
+}
+.map-icon .footer-text::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 32px;
+    background: url(assets/icons/icon-marker.svg);
+    right: 93%;
+}
+.contact-link .tel {
+    margin-top: 8%;
+    margin-bottom: 3%;
+}
+.adreses .headlines-house {
+    margin-bottom: 6%;
+}
+.map-icon .footer-text {
+    margin-left: 14%;
+}
