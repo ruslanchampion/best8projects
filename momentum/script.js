@@ -1,6 +1,5 @@
 const time = document.querySelector('.time'),
   greeting = document.querySelector('.greeting'),
-  name = document.querySelector('.name'),
   focus = document.querySelector('.focus'),
   pressMe = document.querySelector('.press_me');
 
@@ -36,65 +35,29 @@ function setBgGreet() {
   if (hour < 6) {
     document.body.style.backgroundImage =
     `url('img/night/${getRandomInt(1, 20)}.jpg')`;
-    greeting.textContent = 'Good Night, ';
+    greeting.textContent = 'Good Night';
   } else if (hour < 12) {   
     document.body.style.backgroundImage =
       `url('img/morning/${getRandomInt(1, 20)}.jpg')`;
-    greeting.textContent = 'Good Morning, ';
+    greeting.textContent = 'Good Morning';
   } else if (hour < 18) {
     document.body.style.backgroundImage =
     `url('img/day/${getRandomInt(1, 20)}.jpg')`;
-    greeting.textContent = 'Good Afternoon, ';
+    greeting.textContent = 'Good Afternoon';
   } else {
     document.body.style.backgroundImage =
     `url('img/evening/${getRandomInt(1, 20)}.jpg')`;
-    greeting.textContent = 'Good Evening, ';
+    greeting.textContent = 'Good Evening';
     document.body.style.color = 'white';
   }
 }
 
-function getName() {
-  if (localStorage.getItem('name') === null) {
-    name.textContent = '[Enter Name]';
-  } else {
-    name.textContent = localStorage.getItem('name');
-  }
-}
-
-function setName(e) {
-  if (e.type === 'keypress') {
-    if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('name', e.target.innerText);
-      name.blur();
-    }
-  } else {
-    localStorage.setItem('name', e.target.innerText);
-  }
-}
-
-function getFocus() {
-  if (localStorage.getItem('focus') === null) {
-    focus.textContent = '[Enter Focus]';
-  } else {
-    focus.textContent = localStorage.getItem('focus');
-  }
-}
-
-function setFocus(e) {
-  if (e.type === 'keypress') {
-    if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('focus', focus.textContent);
-      focus.blur();
-    }
-  } else {
-    localStorage.setItem('focus', focus.textContent);
-  }
-}
 //
 function getPressMe() {
     if (localStorage.getItem('pressMe') === null) {
-        pressMe.placeholder = '[Press Me]';
+        pressMe.placeholder = '[Press Your Name]';
     } else {
+        pressMe.placeholder = localStorage.getItem('focus')
         pressMe.value = localStorage.getItem('pressMe');
     }
   }
@@ -108,7 +71,7 @@ function getPressMe() {
             pressMe.blur();
         }
         else if  (pressMe.value == '' && localStorage.getItem('pressMe') === null) {
-            pressMe.placeholder = '[Press Me]';
+            pressMe.placeholder = '[Press Your Name]';
             pressMe.blur();
            }
         else {
@@ -122,10 +85,51 @@ function getPressMe() {
             pressMe.placeholder = `${localStorage.getItem('pressMe')}`;
         } 
        else if  (pressMe.value == '' && localStorage.getItem('pressMe') === null) {
-         pressMe.placeholder = '[Press Me]';
+         pressMe.placeholder = '[Press Your Name]';
         }
         else {
             localStorage.setItem('pressMe', pressMe.value);
+      }
+    }
+
+  }
+
+  function getFocus() {
+    if (localStorage.getItem('focus') === null) {
+        focus.placeholder = '[Press Your Focus]';
+    } else {
+        focus.placeholder = localStorage.getItem('focus')
+        focus.value = localStorage.getItem('focus');
+    }
+  }
+  
+  function setFocus(e) {
+
+    if (e.type === 'keypress') {
+      if  (e.which == 13 || e.keyCode == 13) {
+        if (focus.value == '' && localStorage.getItem('focus') !== null) {
+            focus.placeholder = `${localStorage.getItem('focus')}`;
+            focus.blur();
+        }
+        else if  (focus.value == '' && localStorage.getItem('focus') === null) {
+            focus.placeholder = '[Press Your Name]';
+            focus.blur();
+           }
+        else {
+            localStorage.setItem('focus', focus.value);
+            focus.blur();
+        }
+      }
+    } 
+    else {
+        if (focus.value == '' && localStorage.getItem('focus') !== null) {
+            focus.placeholder = `${localStorage.getItem('focus')}`;
+        } 
+       else if  (focus.value == '' && localStorage.getItem('focus') === null) {
+        focus.placeholder = '[Press Your Name]';
+        }
+        else {
+            localStorage.setItem('focus', focus.value);
       }
     }
 
@@ -136,18 +140,16 @@ function getPressMe() {
     this.value = ''
   }
   //
-name.addEventListener('keypress', setName);
-name.addEventListener('blur', setName);
-focus.addEventListener('keypress', setFocus);
-focus.addEventListener('blur', setFocus);
+
 pressMe.addEventListener('blur', setPressMe);
 pressMe.addEventListener('keypress', setPressMe);
 pressMe.addEventListener('focus', clearValueOnFocus);
-name.addEventListener('focus', clearValueOnFocus);
+
+focus.addEventListener('blur', setFocus);
+focus.addEventListener('keypress', setFocus);
 focus.addEventListener('focus', clearValueOnFocus);
 
 showTime();
 setBgGreet();
-getName();
 getFocus();
 getPressMe();

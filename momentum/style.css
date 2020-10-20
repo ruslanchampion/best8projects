@@ -37,8 +37,20 @@
   .press_me {
       background:none;
       border: none;
-      font-size: 3rem;
+      font-size: 2rem;
       color: #000000;
+      text-align: center;
+      
   }
-  ::-webkit-input-placeholder {color:#c0392b;
+  
+  .focus {
+    background:none;
+    border: none;
+    font-size: 2rem;
+    color: #000000;
+    text-align: center;
+  }
+  ::-webkit-input-placeholder {
+      color:#000000;
+      text-align: center;
 }
