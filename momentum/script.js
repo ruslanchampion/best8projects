@@ -27,7 +27,9 @@ function showTime() {
 
   time.textContent = `${hour}:${addZero(min)}:${addZero(sec)} ${showAmPm ? amPm : '' }`;
   date.textContent = `${listWeeks[weeks]}, ${addZero(days)} ${listMonth[month]}`;
-
+  if (min == 0 && sec == 0) {
+    getImage(); 
+  }
   setTimeout(showTime, 1000);
 }
 
@@ -70,13 +72,12 @@ function viewBgImage(data) {
       body.style.backgroundImage = `url(${src})`;
     }; 
   }
+  
 function getImage() {
-    
     const index = i % images.length;
     const imageSrc = base + images[index];
     viewBgImage(imageSrc);
     i++;
-    setTimeout(getImage, 3600000);
   } 
  
 function getPressMe() {
@@ -174,7 +175,13 @@ focus.addEventListener('blur', setFocus);
 focus.addEventListener('keypress', setFocus);
 focus.addEventListener('focus', clearValueOnFocus);
 
-btn.addEventListener('click', getImage);
+function loader() { 
+    btn.disabled = true;
+    getImage()
+    setTimeout(function() { btn.disabled = false }, 1000);
+}
+
+btn.addEventListener('click', loader);
 
 showTime();
 setBgGreet();
