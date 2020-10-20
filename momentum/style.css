@@ -34,3 +34,11 @@
       font-size: 6rem;
     }
   }
+  .press_me {
+      background:none;
+      border: none;
+      font-size: 3rem;
+      color: #000000;
+  }
+  ::-webkit-input-placeholder {color:#c0392b;
+}

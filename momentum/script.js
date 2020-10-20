@@ -1,63 +1,58 @@
-// DOM Elements
 const time = document.querySelector('.time'),
   greeting = document.querySelector('.greeting'),
   name = document.querySelector('.name'),
-  focus = document.querySelector('.focus');
+  focus = document.querySelector('.focus'),
+  pressMe = document.querySelector('.press_me');
 
-// Options
 const showAmPm = true;
 
-// Show Time
 function showTime() {
   let today = new Date(),
     hour = today.getHours(),
     min = today.getMinutes(),
     sec = today.getSeconds();
-
-  // Set AM or PM
   const amPm = hour >= 12 ? 'PM' : 'AM';
 
-  // 12hr Format
   hour = hour % 12 || 12;
 
-  // Output Time
-  time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(
-    sec
-  )} ${showAmPm ? amPm : ''}`;
+  time.textContent = `${hour}:${addZero(min)}:${addZero(sec)} ${showAmPm ? amPm : ''}`;
 
   setTimeout(showTime, 1000);
 }
 
-// Add Zeros
 function addZero(n) {
   return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
 
-// Set Background and Greeting
+function getRandomInt(min, max) {
+    let randomNumber =  Math.floor(Math.random() * Math.floor(max-min)+min);
+    return randomNumber<10 ? '0' + randomNumber : randomNumber + ''
+}
+ 
 function setBgGreet() {
   let today = new Date(),
     hour = today.getHours();
 
-  if (hour < 12) {
-    // Morning
+  if (hour < 6) {
     document.body.style.backgroundImage =
-      "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
+    `url('img/night/${getRandomInt(1, 20)}.jpg')`;
+    greeting.textContent = 'Good Night, ';
+  } else if (hour < 12) {   
+    document.body.style.backgroundImage =
+      `url('img/morning/${getRandomInt(1, 20)}.jpg')`;
     greeting.textContent = 'Good Morning, ';
   } else if (hour < 18) {
-    // Afternoon
     document.body.style.backgroundImage =
-      "url('https://i.ibb.co/3mThcXc/afternoon.jpg')";
+    `url('img/day/${getRandomInt(1, 20)}.jpg')`;
     greeting.textContent = 'Good Afternoon, ';
   } else {
-    // Evening
     document.body.style.backgroundImage =
-      "url('https://i.ibb.co/924T2Wv/night.jpg')";
+    `url('img/evening/${getRandomInt(1, 20)}.jpg')`;
     greeting.textContent = 'Good Evening, ';
     document.body.style.color = 'white';
   }
 }
 
-// Get Name
 function getName() {
   if (localStorage.getItem('name') === null) {
     name.textContent = '[Enter Name]';
@@ -66,10 +61,8 @@ function getName() {
   }
 }
 
-// Set Name
 function setName(e) {
   if (e.type === 'keypress') {
-    // Make sure enter is pressed
     if (e.which == 13 || e.keyCode == 13) {
       localStorage.setItem('name', e.target.innerText);
       name.blur();
@@ -79,7 +72,6 @@ function setName(e) {
   }
 }
 
-// Get Focus
 function getFocus() {
   if (localStorage.getItem('focus') === null) {
     focus.textContent = '[Enter Focus]';
@@ -88,26 +80,72 @@ function getFocus() {
   }
 }
 
-// Set Focus
 function setFocus(e) {
   if (e.type === 'keypress') {
-    // Make sure enter is pressed
     if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('focus', e.target.innerText);
+      localStorage.setItem('focus', focus.textContent);
       focus.blur();
     }
   } else {
-    localStorage.setItem('focus', e.target.innerText);
+    localStorage.setItem('focus', focus.textContent);
   }
 }
+//
+function getPressMe() {
+    if (localStorage.getItem('pressMe') === null) {
+        pressMe.placeholder = '[Press Me]';
+    } else {
+        pressMe.value = localStorage.getItem('pressMe');
+    }
+  }
+  
+  function setPressMe(e) {
 
+    if (e.type === 'keypress') {
+      if  (e.which == 13 || e.keyCode == 13) {
+        if (pressMe.value == '' && localStorage.getItem('pressMe') !== null) {
+            pressMe.placeholder = `${localStorage.getItem('pressMe')}`;
+            pressMe.blur();
+            // localStorage.removeItem('pressMe', pressMe.value);
+    
+        }
+        else {
+            localStorage.setItem('pressMe', pressMe.value);
+            pressMe.blur();
+            pressMe.placeholder = pressMe.value;
+        }
+      }
+    } 
+    else {
+        if (pressMe.value == '' && localStorage.getItem('pressMe') !== null) {
+            pressMe.placeholder = `${localStorage.getItem('pressMe')}`;
+            // localStorage.removeItem('pressMe', pressMe.value);
+        } 
+        else {
+            pressMe.placeholder = pressMe.value;
+            localStorage.setItem('pressMe', pressMe.value);
+      }
+    }
+
+  }
+
+  function clearValueOnFocus() {
+    this.placeholder = ''
+    this.value = ''
+  }
+  //
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
 focus.addEventListener('keypress', setFocus);
 focus.addEventListener('blur', setFocus);
+pressMe.addEventListener('blur', setPressMe);
+pressMe.addEventListener('keypress', setPressMe);
+pressMe.addEventListener('focus', clearValueOnFocus);
+name.addEventListener('focus', clearValueOnFocus);
+focus.addEventListener('focus', clearValueOnFocus);
 
-// Run
 showTime();
 setBgGreet();
 getName();
 getFocus();
+getPressMe();
