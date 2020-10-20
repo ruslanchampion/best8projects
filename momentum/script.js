@@ -106,23 +106,25 @@ function getPressMe() {
         if (pressMe.value == '' && localStorage.getItem('pressMe') !== null) {
             pressMe.placeholder = `${localStorage.getItem('pressMe')}`;
             pressMe.blur();
-            // localStorage.removeItem('pressMe', pressMe.value);
-    
         }
+        else if  (pressMe.value == '' && localStorage.getItem('pressMe') === null) {
+            pressMe.placeholder = '[Press Me]';
+            pressMe.blur();
+           }
         else {
             localStorage.setItem('pressMe', pressMe.value);
             pressMe.blur();
-            pressMe.placeholder = pressMe.value;
         }
       }
     } 
     else {
         if (pressMe.value == '' && localStorage.getItem('pressMe') !== null) {
             pressMe.placeholder = `${localStorage.getItem('pressMe')}`;
-            // localStorage.removeItem('pressMe', pressMe.value);
         } 
+       else if  (pressMe.value == '' && localStorage.getItem('pressMe') === null) {
+         pressMe.placeholder = '[Press Me]';
+        }
         else {
-            pressMe.placeholder = pressMe.value;
             localStorage.setItem('pressMe', pressMe.value);
       }
     }
