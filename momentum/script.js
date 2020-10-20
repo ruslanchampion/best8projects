@@ -1,10 +1,12 @@
 const time = document.querySelector('.time'),
-    date = document.querySelector('.date'),
+  date = document.querySelector('.date'),
   greeting = document.querySelector('.greeting'),
   focus = document.querySelector('.focus'),
-  pressMe = document.querySelector('.press_me');
-
+  pressMe = document.querySelector('.press_me'),
+  btn = document.querySelector('.btn');
 const showAmPm = false;
+let base = 'img/night/';
+let i = 0;
 
 function showTime() {
   let today = new Date(),
@@ -25,7 +27,7 @@ function showTime() {
 
   time.textContent = `${hour}:${addZero(min)}:${addZero(sec)} ${showAmPm ? amPm : '' }`;
   date.textContent = `${listWeeks[weeks]}, ${addZero(days)} ${listMonth[month]}`;
-// date.textContent = new Date()
+
   setTimeout(showTime, 1000);
 }
 
@@ -43,26 +45,40 @@ function setBgGreet() {
     hour = today.getHours();
 
   if (hour < 6) {
-    document.body.style.backgroundImage =
-    `url('img/night/${getRandomInt(1, 20)}.jpg')`;
     greeting.textContent = 'Good Night';
+    base = 'img/night/';
   } else if (hour < 12) {   
-    document.body.style.backgroundImage =
-      `url('img/morning/${getRandomInt(1, 20)}.jpg')`;
     greeting.textContent = 'Good Morning';
+    base = 'img/morning/';
   } else if (hour < 18) {
-    document.body.style.backgroundImage =
-    `url('img/day/${getRandomInt(1, 20)}.jpg')`;
     greeting.textContent = 'Good Afternoon';
+    base = 'img/day/';
   } else {
-    document.body.style.backgroundImage =
-    `url('img/evening/${getRandomInt(1, 20)}.jpg')`;
     greeting.textContent = 'Good Evening';
-    document.body.style.color = 'white';
+    base = 'img/evening/';
   }
 }
 
-//
+const images = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
+
+function viewBgImage(data) {
+    const body = document.querySelector('body');
+    const src = data;
+    const img = document.createElement('img');
+    img.src = src;
+    img.onload = () => {      
+      body.style.backgroundImage = `url(${src})`;
+    }; 
+  }
+function getImage() {
+    
+    const index = i % images.length;
+    const imageSrc = base + images[index];
+    viewBgImage(imageSrc);
+    i++;
+    setTimeout(getImage, 3600000);
+  } 
+ 
 function getPressMe() {
     if (localStorage.getItem('pressMe') === null) {
         pressMe.placeholder = '[Press Your Name]';
@@ -149,7 +165,6 @@ function getPressMe() {
     this.placeholder = ''
     this.value = ''
   }
-  //
 
 pressMe.addEventListener('blur', setPressMe);
 pressMe.addEventListener('keypress', setPressMe);
@@ -159,7 +174,10 @@ focus.addEventListener('blur', setFocus);
 focus.addEventListener('keypress', setFocus);
 focus.addEventListener('focus', clearValueOnFocus);
 
+btn.addEventListener('click', getImage);
+
 showTime();
 setBgGreet();
 getFocus();
 getPressMe();
+getImage();
