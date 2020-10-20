@@ -1,21 +1,31 @@
 const time = document.querySelector('.time'),
+    date = document.querySelector('.date'),
   greeting = document.querySelector('.greeting'),
   focus = document.querySelector('.focus'),
   pressMe = document.querySelector('.press_me');
 
-const showAmPm = true;
+const showAmPm = false;
 
 function showTime() {
   let today = new Date(),
+    month = today.getMonth(),
+    weeks = today.getDay(),
+    days = today.getDate(),
     hour = today.getHours(),
     min = today.getMinutes(),
     sec = today.getSeconds();
-  const amPm = hour >= 12 ? 'PM' : 'AM';
+  
+    const amPm = hour >= 12 ? 'PM' : 'AM';
 
-  hour = hour % 12 || 12;
+  if (showAmPm) {
+      hour = hour % 12 || 12;
+  }
+  const listWeeks = ['Sunday', 'Monday', 'Tuesday', 'Wednesday',  'Thursday',  'Friday',  'Saturday']
+  const listMonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'December']
 
-  time.textContent = `${hour}:${addZero(min)}:${addZero(sec)} ${showAmPm ? amPm : ''}`;
-
+  time.textContent = `${hour}:${addZero(min)}:${addZero(sec)} ${showAmPm ? amPm : '' }`;
+  date.textContent = `${listWeeks[weeks]}, ${addZero(days)} ${listMonth[month]}`;
+// date.textContent = new Date()
   setTimeout(showTime, 1000);
 }
 
@@ -112,7 +122,7 @@ function getPressMe() {
             focus.blur();
         }
         else if  (focus.value == '' && localStorage.getItem('focus') === null) {
-            focus.placeholder = '[Press Your Name]';
+            focus.placeholder = '[Press Your Focus]';
             focus.blur();
            }
         else {
@@ -126,7 +136,7 @@ function getPressMe() {
             focus.placeholder = `${localStorage.getItem('focus')}`;
         } 
        else if  (focus.value == '' && localStorage.getItem('focus') === null) {
-        focus.placeholder = '[Press Your Name]';
+        focus.placeholder = '[Press Your Focus]';
         }
         else {
             localStorage.setItem('focus', focus.value);

@@ -38,19 +38,21 @@
       background:none;
       border: none;
       font-size: 2rem;
-      color: #000000;
+      color: white;
       text-align: center;
+      outline:none;
       
   }
-  
+
   .focus {
     background:none;
     border: none;
     font-size: 2rem;
-    color: #000000;
+    color: white;
     text-align: center;
+    outline:none;
   }
   ::-webkit-input-placeholder {
-      color:#000000;
+      color:white;
       text-align: center;
 }
