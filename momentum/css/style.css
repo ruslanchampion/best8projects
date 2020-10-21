@@ -107,15 +107,14 @@
 
   }
   .temperature {    
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
   }
   .weather-description {
     display: flex;
     flex-direction: column;
     margin: 20px auto;
     font-size: 20px;
-    padding: 12px 0;
+    padding: 5px 5px;
     color: #ffffff;
     background-color:#358ab4;
     border-radius: 5px;
@@ -131,6 +130,10 @@
   .error {
     font-size: 3rem;
     color: tomato;
+  }
+  .jokes {
+    margin-top: 80px;
+    margin-bottom: 15px;
   }
   @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }

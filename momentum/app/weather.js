@@ -27,7 +27,7 @@ async function getWeather() {
   temperature.textContent = `Temperature: ${data.main.temp.toFixed(0)}°C`;
   forecast.textContent = `${data.weather[0].description.toUpperCase()}`;
   humidity.textContent = `Humidity: ${data.main.humidity}%`
-  speed.textContent = `Wind Speed: ${data.wind.speed} m/s `
+  speed.textContent = `Wind Speed: ${data.wind.speed}m/s `
   pressure.textContent = `Pressure: ${data.main.pressure} ISA`                       
  
 }

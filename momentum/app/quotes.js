@@ -29,3 +29,4 @@ function changeJokes () {
 console.log('hello');
 }
 btn.addEventListener('click', changeJokes )
+changeJokes ()
