@@ -23,4 +23,9 @@ const listjokes = ['It’s not a bug. It’s an undocumented feature!',
 function getRandomInt(min, max) {
     return randomNumber =  Math.floor(Math.random() * Math.floor(max-min)+min);   
 }
-
+const jokes =  document.querySelector('.jokes')
+function changeJokes () {
+    jokes.textContent = listjokes[getRandomInt(0, 21)]
+console.log('hello');
+}
+btn.addEventListener('click', changeJokes )
