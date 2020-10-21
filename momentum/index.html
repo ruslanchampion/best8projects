@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>momentum</title>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/owfont-regular.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <button class="btn">   </button>
@@ -21,15 +22,20 @@
 
 
   <input type="text" class="focus" >
-  <!-- whather -->
+    <!-- whather -->
 
-  <div class="city" contenteditable="true">Минск</div>
-  <i class="weather-icon owf"></i>
-  <div class="temperature"></div>
-  <div class="weather-description"></div>
+    <input type="text" class="city">
+    <i class="weather-icon owf"></i>
+    <div class="temperature"></div>
+    <div class="weather-description">
+        <span class="forecast"></span>
+        <span class="humidity"></span>
+        <span class="speed"></span>
+        <span class="pressure"></span>
+    </div>
 
     <!-- whather -->
-    <script src="script.js"></script>
-    <script src="weather.js"></script>
+    <script src="app/script.js"></script>
+    <script src="app/weather.js" defer></script>
 </body>
 </html>
