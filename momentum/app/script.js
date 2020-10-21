@@ -36,11 +36,6 @@ function showTime() {
 function addZero(n) {
   return (parseInt(n, 10) < 10 ? '0' : '') + n;
 }
-
-function getRandomInt(min, max) {
-    let randomNumber =  Math.floor(Math.random() * Math.floor(max-min)+min);
-    return randomNumber<10 ? '0' + randomNumber : randomNumber + ''
-}
  
 function setBgGreet() {
   let today = new Date(),
