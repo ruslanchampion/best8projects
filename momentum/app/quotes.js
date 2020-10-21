@@ -26,7 +26,6 @@ function getRandomInt(min, max) {
 const jokes =  document.querySelector('.jokes')
 function changeJokes () {
     jokes.textContent = listjokes[getRandomInt(0, 21)]
-console.log('hello');
 }
 btn.addEventListener('click', changeJokes )
 changeJokes ()

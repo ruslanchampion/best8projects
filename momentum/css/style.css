@@ -78,7 +78,7 @@
     filter: grayscale(1);
     position: absolute;
     top: 5px;
-    right: 110px;
+    right: 60px;
     margin: 2%;
   }
   .btn:hover {
@@ -132,14 +132,17 @@
   }
   @media (max-width: 700px) {
     .time {
-      font-size: 5.5rem;
+      font-size: 4.5rem;
     }
      .jokes {
       max-width: 80%;
     } 
     .btn {
     top: 5px;
-    right: 8%;
+    right: -1%;
+    }
+    .container {
+      width: 110vw;
     }
   }
   @keyframes shake {
