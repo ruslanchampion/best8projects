@@ -185,7 +185,6 @@ function loader() {
 }
 
 btn.addEventListener('click', loader);
-document.addEventListener('DOMContentLoaded', shuffle)
 showTime();
 setBgGreet();
 getFocus();
