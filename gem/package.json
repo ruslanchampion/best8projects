@@ -7,7 +7,7 @@
     "style": "sass --watch ./src/GUI/styles.sass:dist/styles.css",
     "wp": "webpack --watch",
     "dev": "concurrently --kill-others \"npm run style\" \"npm run wp\"",
-    "lint": "./node_modules/.bin/eslint ./src/main.js",
+    "lint": "./node_modules/.bin/eslint ./src/",
     "lint:fix": "eslint --fix ./src/"
   },
   "keywords": [
