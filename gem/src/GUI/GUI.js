@@ -89,7 +89,7 @@ export default class GUI {
       this.updateTilesPosition();
       this._moveCounter.reset();
       this._timer.startTimer();
-      this._isWon = false;      
+      this._isWon = false;
       if (this._isMusic) this._music.play();
       if (this._size === 4) this.disableSolveButton(false);
     });
