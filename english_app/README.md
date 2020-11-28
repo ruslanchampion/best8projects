@@ -1,6 +1,6 @@
 Pure JS project RSS: **English for Kids**.
 
-#### SPA Project.  
+#### SPA Project.
 
 ### Availible Scripts.  
 * npm install (install all necessary dependencies)

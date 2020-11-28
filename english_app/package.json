@@ -1,8 +1,8 @@
 {
   "name": "english_for_kids",
-  "version": "0.0.1 Beta",
+  "version": "1.0.0",
   "description": "english-for-kids",
-  "main": "cards.js",
+  "main": "app.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
