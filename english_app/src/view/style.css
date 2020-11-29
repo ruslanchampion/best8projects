@@ -25,7 +25,7 @@ html {
   text-align: center;
   height: max-content;
   background: rgb(93,173,226);
-  background: linear-gradient(180deg, rgba(93,173,226,1) 0%, rgba(72,201,176,1) 100%, rgba(255,254,253,1) 100%); 
+  background: linear-gradient(#c6e4ee 0%, #c6e4ee 40%, #fed1ae 60%, #faa0b9 70%, #cb7dcb 80%, #757ecb 100%); 
   border-radius: 5px;
   cursor: pointer;
   transition: .2s;
@@ -100,7 +100,7 @@ input[type="checkbox"]{
   width: 122px;
   height: 42px;
   background: rgb(93,173,226);
-  background: linear-gradient(180deg, rgba(93,173,226,1) 0%, rgba(72,201,176,1) 100%, rgba(255,254,253,1) 100%); 
+  background: linear-gradient(#88adb9 0%, #c6e4ee 40%, #fed1ae 60%, #faa0b9 70%, #cb7dcb 80%, #757ecb 100%); 
   -webkit-appearance: none;
   border-radius: 5px;
   outline: none;
@@ -110,8 +110,8 @@ input[type="checkbox"]{
 }
 
 input:checked[type="checkbox"]{
-  background: rgb(245,176,65);
-  background: linear-gradient(180deg, rgba(245,176,65,1) 0%, rgba(236,112,99,1) 100%, rgba(255,254,253,1) 100%);
+  background:  #5611ec;
+  background: linear-gradient(21deg, #dd03e4, #5611ec);
 }
 
 input[type="checkbox"]::before{
@@ -227,10 +227,10 @@ label {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background: -webkit-gradient(linear,left top,left bottom,from(#5DADE2 ),color-stop(40%,#48C9B0),color-stop(40%,#fff),to(#fff));
+  background: linear-gradient(#c6e4ee 0%, #c6e4ee 40%, #fed1ae 60%, #faa0b9 70%, #cb7dcb 80%, #757ecb 100%);
   text-decoration: none;
   font-size: 1.5vw;
-  color: black;
+  color:  #5611ec;
   box-shadow: 0 8px 6px -6px #2E86C1  ;
   transition: .2s ease-in-out;
   position: relative;
