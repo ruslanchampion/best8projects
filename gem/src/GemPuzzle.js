@@ -31,30 +31,6 @@ export default class GemPuzzle {
     return this._tiles2d;
   }
 
-  /* Solution by array */
-  /*        deprecated */
-  /*
-    getMove(n) {
-        const iN = this._tiles.indexOf(n);
-        const [rowN, columnN] = ArrayData.getIndex2D(iN, this._size);
-        const i0 = this._tiles.indexOf(0);
-        const [row0, column0] = ArrayData.getIndex2D(i0, this._size);
-        let move = 0;
-
-        if (columnN === column0) {
-            const dRow = row0 - rowN;
-            if (dRow === 1 || dRow === -1) move = dRow * this._size;
-        }
-
-        if (rowN === row0) {
-            const dColumn = column0 - columnN;
-            if (dColumn === 1 || dColumn === -1) move = dColumn;
-        }
-
-        return move;
-    }
-    */
-
   getMove(n) {
     if (this._tiles2d[n].column === this._tiles2d[0].column) {
       const dRow = this._tiles2d[0].row - this._tiles2d[n].row;

@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 import './styles.sass';
 
 import RatingTable from './RatingTable';
@@ -123,6 +124,7 @@ export default class GUI {
       tile.appendTo(this._board);
       tile.setImage(this._srcImg, this._size);
       tile.showNumber(this._isNumbers);
+      // eslint-disable-next-line no-new
       new DragNDrop(tile, this.checkTilePosition.bind(this));
       this._tiles.push(tile);
       tile.setPosition(0, 0);
@@ -361,7 +363,8 @@ export default class GUI {
     switch (this._solve[n]) {
       case 'LEFT':
         for (const k in this._tiles2d) {
-          if (this._tiles2d[k].row === this._tiles2d[0].row && this._tiles2d[k].column === this._tiles2d[0].column - 1) {
+          if (this._tiles2d[k].row === this._tiles2d[0].row
+            && this._tiles2d[k].column === this._tiles2d[0].column - 1) {
             this._tiles2d[k].column = this._tiles2d[0].column;
             this._tiles2d[0].column = this._tiles2d[k].column - 1;
             break;
@@ -370,7 +373,8 @@ export default class GUI {
         break;
       case 'RIGHT':
         for (const k in this._tiles2d) {
-          if (this._tiles2d[k].row === this._tiles2d[0].row && this._tiles2d[k].column === this._tiles2d[0].column + 1) {
+          if (this._tiles2d[k].row === this._tiles2d[0].row
+           && this._tiles2d[k].column === this._tiles2d[0].column + 1) {
             this._tiles2d[k].column = this._tiles2d[0].column;
             this._tiles2d[0].column = this._tiles2d[k].column + 1;
             break;
@@ -379,7 +383,8 @@ export default class GUI {
         break;
       case 'UP':
         for (const k in this._tiles2d) {
-          if (this._tiles2d[k].row === this._tiles2d[0].row - 1 && this._tiles2d[k].column === this._tiles2d[0].column) {
+          if (this._tiles2d[k].row === this._tiles2d[0].row - 1
+            && this._tiles2d[k].column === this._tiles2d[0].column) {
             this._tiles2d[k].row = this._tiles2d[0].row;
             this._tiles2d[0].row = this._tiles2d[k].row - 1;
             break;
@@ -388,7 +393,8 @@ export default class GUI {
         break;
       case 'DOWN':
         for (const k in this._tiles2d) {
-          if (this._tiles2d[k].row === this._tiles2d[0].row + 1 && this._tiles2d[k].column === this._tiles2d[0].column) {
+          if (this._tiles2d[k].row === this._tiles2d[0].row + 1
+          && this._tiles2d[k].column === this._tiles2d[0].column) {
             this._tiles2d[k].row = this._tiles2d[0].row;
             this._tiles2d[0].row = this._tiles2d[k].row + 1;
             break;

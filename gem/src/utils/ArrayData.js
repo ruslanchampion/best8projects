@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 export default class ArrayData {
   static createSequence(n) {
     return Array.from({ length: n }, (_, i) => (i + 1) % n);
@@ -9,6 +10,7 @@ export default class ArrayData {
     while (n > 1) {
       const r = ~~(Math.random() * n);
       n -= 1;
+      // eslint-disable-next-line no-param-reassign
       [v[n], v[r]] = [v[r], v[n]];
     }
   }

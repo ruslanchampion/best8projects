@@ -11,15 +11,15 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-plusplus': ["error", { 
-      "allowForLoopAfterthoughts": true 
+    'no-plusplus': ['error', {
+      allowForLoopAfterthoughts: true,
     }],
     'no-bitwise': 0,
-    'no-underscore-dangle': ["error", { 
-      "allowAfterThis": true 
+    'no-underscore-dangle': ['error', {
+      allowAfterThis: true,
     }],
-    'no-console': ["error", { 
-      allow: ["warn", "error"] 
-    }],    
+    'no-console': ['error', {
+      allow: ['warn', 'error'],
+    }],
   },
 };
