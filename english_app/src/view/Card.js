@@ -1,4 +1,4 @@
-import rotate from '../assets/img/rotate.svg';
+import rotate from '../assets/images/rotate.svg';
 
 export default class Card {
   constructor({
