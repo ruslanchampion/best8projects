@@ -340,7 +340,7 @@ window.onload = () => {
     success.classList.add('success');
 
     if (state) {
-      phrase.innerText = 'Win!';
+      phrase.innerText = '';
 
       const audio = new Audio(winAudio);
       audio.play();
@@ -371,7 +371,7 @@ window.onload = () => {
       main.lastElementChild.remove();
       playButton.remove();
       main.append(categories);
-    }, 1500);
+    }, 4000);
   }
 
   function checkIfTrue(e) {
