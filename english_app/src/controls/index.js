@@ -46,9 +46,10 @@ export function createSrcContainer(arr) {
 }
 
 export function countSuccessFailure(card, res, cardsMap) {
+  const catPathFrom = 18;
   let key = card.getAttribute('src');
-  key = key.slice(18, key.length - 4);
-
+  const carPathTo = key.length - 4;
+  key = key.slice(catPathFrom, carPathTo);
   const obj = {};
   Object.assign(obj, cardsMap.get(key));
   if (res) {
@@ -139,7 +140,8 @@ export function sortLettersTable(n) {
 export function sortNumbersTable(n) {
   let rows;
   let switching;
-  let i; let x;
+  let i;
+  let x;
   let y;
   let shouldSwitch;
   let dir;
