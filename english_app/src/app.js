@@ -2,12 +2,6 @@
 import './view/style.css';
 import Card from './view/Card';
 import data from './module/cards';
-import successAudio from './assets/audio/correct.mp3';
-import errorAudio from './assets/audio/error.mp3';
-import winAudio from './assets/audio/success.mp3';
-import failAudio from './assets/audio/failure.mp3';
-import starEmpty from './assets/images/star.svg';
-import starWin from './assets/images/star-win.svg';
 import {
   countAttemps,
   createCardsMap,
@@ -21,6 +15,7 @@ import {
   clearStatistic,
 } from './controls';
 
+const RESULTFORWIN = 7;
 const menuSwitcher = document.querySelector('.menu-switcher');
 const categories = document.querySelector('.categories');
 const categoryLinks = document.querySelectorAll('.category-link');
@@ -29,12 +24,12 @@ const main = document.querySelector('.main');
 const words = document.createElement('div');
 words.classList.add('categories');
 const menu = document.querySelector('.sliding-menu');
-menuSwitcher.onclick = () => {
+menuSwitcher.addEventListener('click', () => {
   document.querySelector('.sliding-menu').classList.toggle('hidden');
   sticks[0].classList.toggle('to-bottom');
   sticks[1].classList.toggle('fade');
   sticks[2].classList.toggle('to-top');
-};
+});
 const playButton = document.createElement('button');
 playButton.classList.add('play-button');
 playButton.innerText = 'START';
@@ -50,7 +45,7 @@ let isPlaying = false;
 let cardsMap = new Map();
 let cardsMapSaved;
 
-window.onload = () => {
+window.addEventListener('load', () => {
   cardsMapSaved = new Map(JSON.parse(localStorage.getItem('map')));
   createCardsMap(cardsMap, data);
 
@@ -66,14 +61,14 @@ window.onload = () => {
       main.append(words);
     });
     [...words.children].forEach((word) => {
-      word.onmouseleave = () => {
+      word.addEventListener('mouseleave' , () => {
         if (word.classList.contains('transparent')) {
           word.classList.remove('transparent');
           word.firstElementChild.classList.remove('flipped');
           word.firstElementChild.firstElementChild.lastElementChild.lastElementChild.classList.remove('rotate-sym-hidden');
         }
-      };
-      word.onclick = (e) => {
+      });
+      word.addEventListener('click', (e) => {
         if (word.firstElementChild.classList.contains('flipped') || e.target.classList.contains('rotate-sym')) return;
         if (isPlaying) return;
         const audioSrc = word.getAttribute('data-audio');
@@ -81,7 +76,7 @@ window.onload = () => {
         const phranse = new Audio(audioSrc);
         phranse.play();
         countAttemps(word, cardsMap);
-      };
+      });
     });
     createStarsLine();
   }
@@ -342,14 +337,14 @@ window.onload = () => {
     if (state) {
       phrase.innerText = '';
 
-      const audio = new Audio(winAudio);
+      const audio = new Audio('../dist/src/assets/audio/success.mp3');
       audio.play();
     }
     if (!state) {
       success.classList.add('failure');
       phrase.innerText = `${err} Error(s)!`;
 
-      const audio = new Audio(failAudio);
+      const audio = new Audio('../dist/src/assets/audio/failure.mp3');
       audio.play();
     }
 
@@ -394,14 +389,14 @@ window.onload = () => {
 
       const starsLine = document.querySelector('.stars-line');
 
-      if (counter === 7 && starsLine.children.length === 7) {
+      if (counter === RESULTFORWIN && starsLine.children.length === RESULTFORWIN) {
         isWin = true;
         setTimeout(() => {
           createResultImage(isWin);
         }, 1000);
       }
 
-      if (counter === 7 && starsLine.children.length !== 7) {
+      if (counter === RESULTFORWIN && starsLine.children.length !== RESULTFORWIN) {
         isWin = false;
         setTimeout(() => {
           createResultImage(isWin, errors);
@@ -409,11 +404,11 @@ window.onload = () => {
       }
 
       countSuccessFailure(target, res, cardsMap);
-      addStars(starWin);
+      addStars('../dist/src/assets/images/star-win.svg');
 
       target.classList.add('card-playing-solved');
 
-      const audio = new Audio(successAudio);
+      const audio = new Audio('../dist/src/assets/audio/correct.mp3');
       audio.play();
 
       counter++;
@@ -425,11 +420,11 @@ window.onload = () => {
       res = false;
 
       countSuccessFailure(target, res, cardsMap);
-      addStars(starEmpty);
+      addStars('../dist/src/assets/images/star.svg');
 
       errors++;
 
-      const audio = new Audio(errorAudio);
+      const audio = new Audio('../dist/src/assets/audio/error.mp3');
       audio.play();
     }
   }
@@ -456,8 +451,8 @@ window.onload = () => {
       const th = document.createElement('th');
       th.innerText = statsHeaders[i];
       if (i < 3) {
-        th.onclick = () => sortLettersTable(i);
-      } else if (i >= 3) th.onclick = () => sortNumbersTable(i);
+        th.addEventListener('click', () => sortLettersTable(i));
+      } else if (i >= 3) th.addEventListener('click', () => sortNumbersTable(i));
 
       tr.append(th);
     }
@@ -519,12 +514,12 @@ window.onload = () => {
       main.prepend(statsPage);
       currentPage.classList.add('hidden-categories');
     }
-    closeStats.onclick = () => {
+    closeStats.addEventListener('click', () => {
       statsLink.classList.remove('statistic-link-active');
       refreshStats.classList.remove('difficult-words-active');
       statsPage.remove();
       currentPage.classList.remove('hidden-categories');
-    };
+    });
   }
 
   function showDifficultWords(e) {
@@ -565,7 +560,7 @@ window.onload = () => {
               word.firstElementChild.firstElementChild.lastElementChild.lastElementChild.classList.remove('rotate-sym-hidden');
             }
           };
-          word.onclick = (evt) => {
+          word.addEventListener('click', (evt) => {
             if (word.firstElementChild.classList.contains('flipped') || evt.target.classList.contains('rotate-sym')) return;
             if (isPlaying) return;
             const audioSrc = word.getAttribute('data-audio');
@@ -573,7 +568,7 @@ window.onload = () => {
             const phranse = new Audio(audioSrc);
             phranse.play();
             countAttemps(word);
-          };
+          });
         });
       } else {
         main.append(words);
@@ -604,4 +599,4 @@ window.onload = () => {
     const cardsMapSave = JSON.stringify(Array.from(cardsMap.entries()));
     localStorage.setItem('map', cardsMapSave);
   });
-};
+});
